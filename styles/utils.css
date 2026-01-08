@@ -1,0 +1,124 @@
+:root{
+    --size_xs : 0.25em;
+    --size_s : 0.40em;
+    --size_m : 1em;
+    --size_l : 1.5em;
+    --size_xl : 3em;
+    --size_xxl : 1em;
+}
+
+/*#Margin#*/
+
+
+/*##margin-all##*/
+.margin-all-xs{
+    margin: var(--size_xs);
+}
+
+.margin-all-s{
+    margin: var(--size_s);
+}
+
+.margin-all-m{
+    margin: var(--size_m);
+}
+
+.margin-all-l{
+    margin: var(--size_l);
+}
+.margin-all-xl{
+    margin: var(--size_xl);
+}
+
+.margin-all-xxl{
+    margin: var(--size_xxl);
+}
+
+
+/*##margin-inline##*/
+
+.margin-inline-xs{
+    margin-inline: var(--size_xs);
+}
+
+.margin-inline-s{
+    margin-inline: var(--size_s);
+}
+
+.margin-inline-m{
+    margin-inline: var(--size_m);
+}
+
+.margin-inline-l{
+    margin-inline: var(--size_l);
+}
+.margin-inline-xl{
+    margin-inline: var(--size_xl);
+}
+
+.margin-inline-xxl{
+    margin-inline: var(--size_xxl);
+}
+
+
+/*##margin block##*/
+
+
+.margin-block-xs{
+    margin-block: var(--size_xs);
+}
+
+.margin-block-s{
+    margin-block: var(--size_s);
+}
+
+.margin-block-m{
+    margin-block: var(--size_m);
+}
+
+.margin-block-l{
+    margin-block: var(--size_l);
+}
+.margin-block-xl{
+    margin-block: var(--size_xl);
+}
+
+.margin-block-xxl{
+    margin-block: var(--size_xxl);
+}
+
+
+
+/*##Margin-left##*/
+
+.margin-left-xs{
+    margin-left: var(--size_xs);
+}
+
+.margin-left-s{
+    margin-left: var(--size_s);
+}
+
+.margin-left-m{
+    margin-left: var(--size_m);
+}
+
+.margin-left-l{
+    margin-left: var(--size_l);
+}
+.margin-left-xl{
+    margin-left: var(--size_xl);
+}
+
+.margin-left-xxl{
+    margin-left: var(--size_xxl);
+}
+
+/*
+
+    Valentin, hésites pas à renommer les classes en fonction de ce qui te sembles plus pertinent
+    Pour les variables on est en snake case 
+    et pour les classes en kebab case
+
+    il faut au minimum, les marges, les paddings, pouvoir centrer et aligner des éléments
+*/

@@ -1,0 +1,314 @@
+body {
+	/*Vars needed for anim config*/
+	--shadow-spread: clamp(4px, 2vw, 28px);
+	animation: inset-breath 2s alternate infinite ease-in;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  text-align: center;
+  padding-inline: clamp(2px,1em,60px );
+  width: 100%;
+}
+
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.column p{
+  text-align: center;
+  line-height: 1.7;
+}
+
+.column a{
+justify-self: center;
+}
+
+.paragraph{
+display: flex;
+color: white;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+padding-block: 1em;
+margin-bottom: 2em;
+flex: 1;
+}
+
+#GrandTournoi{
+display: flex;
+flex-direction: column;
+flex: 1;
+align-items: center;
+gap: 1em;
+}
+
+#LogoTrackmania{
+  padding-bottom: 4em;
+  max-width: clamp(250px, 24vw, 500px);
+}
+
+#IntegTwitch{
+  flex: 1;
+  display: flex;
+}
+
+#Car{
+  max-width: 50%;
+}
+
+#Trophies{
+  max-width: clamp(300px, 30vw, 600px);
+
+}
+
+.cashprize{
+	line-height: 1.7;
+	flex: 1;
+}
+
+.paragraph-right{
+display: flex;
+color: white;
+flex-direction: column;
+flex: 1;
+border-width: 5px;
+border-color: aqua;
+padding: 0.5em;
+margin-top: 1em;
+max-width: 50%;
+align-items: center;
+}
+
+.paragraph-middle{
+display: flex;
+flex-wrap: wrap;
+color: white;
+flex-direction: column;
+max-width: 100vw;
+padding-block: 0.5em;
+margin-top: 0.5em;
+margin-bottom: 1.2em;
+justify-self: center;
+align-items: center;
+}
+
+.titre-circuit{
+padding-bottom: 0.7em;
+}
+
+#Circuits{
+  --number-cols:1;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(var(--number-cols),2fr);
+  grid-auto-rows: fit-content;
+  column-gap: 0.2em;
+  row-gap: 0.2em;
+}
+
+@media(width > 500px){
+  #Circuits{
+    --number-cols:2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .paragraph{
+    max-width: 100vw;
+  }
+  .paragraph-right{
+    max-width: 100vw;
+  }
+  .paragraph-middle{
+    flex-direction: column;
+    max-width: 100vw;
+  }
+}
+
+
+#buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+
+.button{
+    display: flex;
+    padding-inline: clamp(2px, 1vw, 12px);
+    padding-block: clamp(1px,1vw,6px);
+    min-width: fit-content;
+    justify-content: center;
+    border: 3px solid var(--border_backgroud);
+    border-radius: 35px;
+    background: #ffffff6e;
+    color: var(--color_color);
+    gap: 1.2em;
+    flex: 1;
+	align-items: center;
+	backdrop-filter: blur(16px);
+	width: fit-content;
+	transition: background-color 0.2s ease-in;
+}
+
+.button{
+  padding-inline: clamp(1px, 1vw, 16px);
+  padding-block: clamp(0.5px, 1vw, 10px);
+}
+
+#CondPres{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.Responsive{
+flex: 1;
+}
+
+
+.inscription-btn{
+    display: flex;
+    justify-content: center;
+    background-color: #6EFAA0;
+    color: black;
+    align-items: center;
+    align-self: center;
+	text-shadow: none;
+}
+
+.logo-button{
+  height: 2em;
+  width: 2em;
+  fill: white;
+}
+
+.inscription-btn svg{
+	fill: black;
+}
+
+
+
+.button:hover .logo-button{
+	fill: black;
+}
+
+
+
+/*Block needed for animation of buttons*/
+@keyframes breath{
+	0%{
+		box-shadow: 0 0 20px var(--shadow-spread) #0CFF63;
+	}
+	100%{
+		box-shadow: 0 0 20px 0px var(--glow-color);
+	}
+}
+
+
+
+.button:hover{
+	/*Vars needed for anim config*/
+	--glow-color: var(var(--btn-color));	
+	--shadow-spread : 10px;
+
+	animation: breath 3s infinite alternate ease-in;
+}
+
+/*End of block*/
+
+.button:hover,.button:active{
+  --btn-color: var(--accent-color);
+  background-color: var(--btn-color);
+  color: black;
+  text-shadow: none;
+  transition: background-color 0.2s ease-in;
+}
+
+@media screen and (max-width:768px){
+
+  :has(> #Car){
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px){
+  .row{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:768px){
+  #buttons{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:768px){
+  #CondPres{
+    flex-direction: column;
+  }
+}
+
+
+@media screen and (min-width:1000px){
+  header,main,footer{
+	padding-inline: clamp(24px,8vw,800px);
+  }
+}
+
+/*Block needed for twitch embed*/
+	#twitch-embed{
+		border-radius: 16px;
+    border: solid 5px #0ffb;
+    aspect-ratio: 16 / 9;
+	}
+
+	#twitch-embed iframe{
+		border-radius: 5px;
+	}
+/*End of block*/
+
+.green-txt{
+    color: var(--accent-color);
+}
+
+#IntegTwitch{
+  display: grid;
+  flex: 1;
+  justify-items: center;
+  width: 100%;
+  align-items: center;
+}
+
+#twitch-embed {
+  border: 6px solid var(--border_backgroud);
+  border-radius: 20px; 
+  overflow: hidden; 
+  width: 100%;
+  border-radius: 16px;
+  border: solid 5px #0ffb;
+  max-width: 854px;
+  aspect-ratio: 16 / 9;
+}

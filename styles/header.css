@@ -1,0 +1,366 @@
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background:
+  radial-gradient(
+  ellipse 70% 140% at 45% 50%,
+  rgba(0, 5, 255, 1) 0%,
+  rgba(0, 40, 255, 0.92) 25%,
+  rgba(0, 110, 255, 0.70) 50%,
+  rgba(0, 200, 255, 0.55) 70%,
+  rgba(0, 227, 254, 0.45) 100%
+  ),
+  linear-gradient(
+  to left,
+  rgba(0, 5, 255, 0.55) 100%,
+  rgba(0, 227, 254, 0.95) 0%
+  );
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
+  animation: background-loop 5s infinite ease-in;
+  
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+#animer {
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 247, 0, 0.7),
+    rgba(0, 255, 17, 0.65)
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+#animer.paused {
+  animation-play-state: paused;
+  transform: translate(auto, auto) scale(1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#nuage {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate(-48%, -56%) rotate(180deg) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}
+
+
+:root {
+  --color_backgroud: #ffffff6e;
+  --color_backgroud1: #f3f0f078;
+  --border_backgroud: #00DFFE;
+  --color_color: #ffffff;
+  --backgroud_backgroud: #F6FF00;
+  --text-shadow: 0px 4px 20px rgb(0, 0, 0, 80%);
+  --text-shadow0: 0px 0px 20px rgb(0, 0, 0, 80%);
+	--glow-blur: 1px;
+	--glow-color: #03c816;
+	--accent-color: #0CFF63;
+}
+
+span {
+  /* font-size: 20px; */
+  color: var(--color_color);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  opacity: 0;
+  transform: translateY(-25px);
+  animation: hatta 6s ease forwards;
+}
+
+@keyframes hatta {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* header- */
+#box_header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+/* BURGER MENU */
+.burger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.burger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px 0px;
+  background: var(--color_color);
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.menu-burger {
+  position: absolute;
+  top: 110px;
+  right: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgb(0, 0, 0, 100%);
+  transform: translateY(-10px);
+  z-index: 1000;
+  padding: 20px 10px;
+  pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  gap: 20px;
+  border: 3px solid rgb(0, 215, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-burger.active {
+  opacity: 100;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+.burger-twitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(109, 255, 161, 100%);
+  border-radius: 15px;
+  background: rgb(109, 255, 161, 70%);
+  padding: 5px 10px;
+  font-style: oblique;
+}
+
+.burger-twitch span {
+  color: rgb(0, 0, 0, 80%);
+  padding: 0px 20px;
+  /* font-size: calc(1.2em, 2vw, 1.2em); */
+  font-weight: 900;
+  font-style: oblique;
+}
+
+.burger-img path {
+  fill: rgb(0, 0, 0, 80%);
+}
+
+.burger-twitch:hover{
+  background: rgb(12, 255, 99, 80%);
+}
+
+.burger-twitch:active{
+  background: rgba(12, 255, 99, 80%);
+}
+
+.header-live {
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+  z-index: 1;
+}
+
+.header-Twitch,
+.header-Discord,
+.header-Youtube {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: transparent;
+  gap: 40px;
+  padding: 0.8em;
+}
+
+.bg-Twitch,
+.bg-Discord,
+.bg-Youtube {
+  background: #aeaeae1f;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.header-Twitch::before,
+.header-Discord::before,
+.header-Youtube::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 20px;
+  background: linear-gradient(to top, #00DFFE, #0022FF);
+  -webkit-mask: 
+   linear-gradient(#fff 0 0) content-box, 
+   linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.Twitch,
+.Discord,
+.Youtube {
+  display: flex;
+  align-items: center;
+}
+
+.Twitch,
+.Discord,
+.Youtube  path {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.Twitch:hover path {
+  fill: #9146FF;
+}
+
+.Twitch:active path {
+  fill: #9146FF;
+}
+.Discord:hover path {
+  fill: #5865F2;
+}
+
+.Discord:active path {
+  fill: #5865F2;
+}
+
+.Youtube:hover path {
+  fill: #FF0000;
+}
+
+.Youtube:active path {
+  fill: #FF0000;
+}
+
+.color-green {
+  color: #03c816;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .header-live {
+  display: none;
+  }
+
+  .burger {
+  display: block;
+  }
+
+  .header-icons {
+  display: flex;
+  align-items: center;
+  }
+}
+
+
+.btn-ex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 20px;
+}
+
+.btn-en {
+  display: flex;
+  align-items: center;
+  border: 2px solid #6EFAA0;
+  background: rgb(243, 240, 240, 37%);
+  border-radius: 90px;
+  gap: 10px;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #ffffff;
+  font-style: oblique;
+  font-weight: 800;
+  /* font-size: 12px; */
+  text-shadow: 0px 0px 4px rgb(0, 0, 0, 78%);
+}
+
+.btn-img {
+  transition: 0.3s ease;
+  fill: #fff;
+}
+
+.btn-en:hover{
+  background: rgba(110, 250, 160, 80%);
+  color: rgb(0, 0, 0, 80%);
+  text-shadow: none;
+}
+.btn-en:hover .btn-img path {
+   fill: rgb(0, 0, 0, 80%);
+}
+
+.btn-en:active{
+  background: rgba(110, 250, 160, 80%);
+  color: rgb(0, 0, 0, 80%);
+  text-shadow: none;
+}
+.btn-en:active .btn-img path {
+   fill: rgb(0, 0, 0, 80%);
+}
