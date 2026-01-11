@@ -28,7 +28,7 @@ Il ne s’agit **pas du site officiel**, mais d’une adaptation avec des retouc
 
 ## 🔗 Mise en ligne
 
-Cette version personnalisée sera disponible à partir du **16 janvier 2026**.  
+https://hattabelfaqir.github.io/EGAMES-trackmaniaV2/
 
 ---
 
